@@ -39,7 +39,13 @@ using WebScarping.Models;
 ```
 
 ### Now Actual/Final Code
-Controller
+
+
+```Controller``` 
+
+
+
+
 ```js
 
 namespace WebScarping.Controllers
@@ -105,7 +111,8 @@ namespace WebScarping.Controllers
     }
 }
 ```
-Model 
+```Model``` 
+
 ```js
 namespace WebScarping.Models
 {
@@ -119,7 +126,7 @@ namespace WebScarping.Models
 
 ```
 
-View
+```View```
 
 ```js
 @model IEnumerable<WebScarping.Models.Statistics>
@@ -154,8 +161,9 @@ View
 
 ```
 
-Result
+```Result```
 
+![alt Output](https://github.com/Kshitij-Kafle-123/codeWhateverYouWant/blob/public/WebScarping/wwwroot/img/output.png)
 
 
 ---
