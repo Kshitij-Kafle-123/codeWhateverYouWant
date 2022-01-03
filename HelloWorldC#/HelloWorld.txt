@@ -1,4 +1,4 @@
-// C# program to print Hello World!
+
 using System;
 
 // namespace declaration
