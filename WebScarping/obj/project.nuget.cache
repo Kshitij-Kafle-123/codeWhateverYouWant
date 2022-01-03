@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "mcfIfPh9OhJEJP69A1O1ahPo+pYbCY9/c42bROhpSeGL3k/3WvE1Vhih8A1rDH4K5SHS9Tanz5HcB6I68Ul8hw==",
+  "success": true,
+  "projectFilePath": "D:\\Coding\\codeWhateverYouWant\\WebScarping\\WebScarping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\97798\\.nuget\\packages\\htmlagilitypack\\1.11.39\\htmlagilitypack.1.11.39.nupkg.sha512",
+    "C:\\Users\\97798\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
