@@ -1,8 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<WebScarping.Models.Statistics>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 style="color:darkblue">Most Searched KeyWords of The Week (December 19 to 25, 2021)</h1>
+
+    <br />
+    <br />
+
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>KeyWord</th>
+                <th>ViewCount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var statistics in Model)
+            {
+                <tr>
+                    <td>@statistics.Rank</td>
+                    <td>@statistics.KeyWord</td>
+                    <td>@statistics.WatchNumberCount</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
 </div>

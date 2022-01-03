@@ -20,7 +20,8 @@ namespace WebScarping.Controllers
         {
             var response = ParseUrl(_url).Result;
             var result = HtmlParse(response);
-            return View();
+
+            return View(result);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -38,26 +39,29 @@ namespace WebScarping.Controllers
         }
         private List<Statistics> HtmlParse(string htmlData)
         {
-            Statistics statistics = new Statistics();
             HtmlDocument htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(htmlData);
 
             var element = htmlDocument.DocumentNode.SelectNodes("//*[@class='wikitable']//tr");
-            //.Where(node => node.GetAttributeValue("class", "").Contains("wikitable")).ToList();
-            //var mostSearched = element.Where();
+
             List<Statistics> keyWordList = new List<Statistics>();
             foreach (var row in element)
             {
                 var heading = row.SelectNodes("td");
                 if (heading != null)
                 {
-                    statistics.Rank = Convert.ToInt32(heading[0].InnerText);
-                    statistics.KeyWord = heading[1].InnerText;
-                    statistics.WatchNumberCount = heading[3].InnerText;
 
+                    var statistics = new Statistics
+                    {
+                        Rank = Convert.ToInt32(heading[0].InnerText),
+                        KeyWord = heading[1].InnerText,
+                        WatchNumberCount = heading[3].InnerText
+                    };
                     keyWordList.Add(statistics);
                 }
+
             }
+
             return keyWordList;
         }
     }
