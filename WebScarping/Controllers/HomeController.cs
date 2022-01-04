@@ -68,10 +68,10 @@ namespace WebScarping.Controllers
 
             return keyWordList;
         }
-        private async Task<IActionResult> ParseHeadless()
+        private async Task<string> ParseHeadless()
         {
             _url = _configuration.GetSection("Urls").GetSection("wiki-url").Value;
-            List<string> list = new List<string>();
+            List<string> list = new();
             var options = new LaunchOptions()
             {
                 Headless = true,
