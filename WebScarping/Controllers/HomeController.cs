@@ -13,7 +13,7 @@ namespace WebScarping.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _url = "https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report";
+            _url = "";
         }
 
         public IActionResult Index()
