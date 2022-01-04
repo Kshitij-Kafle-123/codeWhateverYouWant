@@ -16,21 +16,21 @@
 
 ## Steps
 Create MVC Project it will automatically provides you a Controller and a View
-```js
+```csharp
 public class HomeController : Controller
 {
 
 }
 
 ```
-```js
+```csharp
 <div class="text-center">
 //blablabla...
 </div>
 ```
 Add these libraries in a HomeController (For HtmlAgilityPack install html agility pack from NUGET Package Manager)
 
-```js
+```csharp
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -46,7 +46,7 @@ using WebScarping.Models;
 
 
 
-```js
+```csharp
 
 namespace WebScarping.Controllers
 {
@@ -113,7 +113,7 @@ namespace WebScarping.Controllers
 ```
 ```Model``` 
 
-```js
+```csharp
 namespace WebScarping.Models
 {
     public class Statistics
@@ -128,7 +128,7 @@ namespace WebScarping.Models
 
 ```View```
 
-```js
+```csharp
 @model IEnumerable<WebScarping.Models.Statistics>
 
 <div class="text-center">
