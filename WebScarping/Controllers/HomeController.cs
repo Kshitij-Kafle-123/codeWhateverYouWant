@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
+using PuppeteerSharp;
 using System.Diagnostics;
 using System.Net;
 using WebScarping.Models;
@@ -10,14 +11,17 @@ namespace WebScarping.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private string _url;
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IConfiguration _configuration;
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
             _logger = logger;
-            _url = "https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report";
+            _configuration = configuration;
+            _url = "";
         }
 
         public IActionResult Index()
         {
+            _url = _configuration.GetSection("Urls").GetSection("wiki-url").Value;
             var response = ParseUrl(_url).Result;
             var result = HtmlParse(response);
 
@@ -63,6 +67,32 @@ namespace WebScarping.Controllers
             }
 
             return keyWordList;
+        }
+        private async Task<string> ParseHeadless()
+        {
+            _url = _configuration.GetSection("Urls").GetSection("wiki-url").Value;
+            List<string> list = new();
+            var options = new LaunchOptions()
+            {
+                Headless = true,
+                ExecutablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+            };
+
+            var browser = await Puppeteer.LaunchAsync(options, null);
+            var page = await browser.NewPageAsync();
+
+            await page.GoToAsync(_url);
+
+            var links = @"Array.from(document.querySelectorAll('a')).map(a => a.href);";
+            var urls = await page.EvaluateExpressionAsync<string[]>(links);
+
+
+            foreach (string url in urls)
+            {
+                list.Add(url);
+            }
+
+            return null;
         }
     }
 }
