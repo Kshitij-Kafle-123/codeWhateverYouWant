@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cUqwG7iok0I11XrInsiB+ie+UxLZ3DaMN8yXuboRDtDjT/x7RuhVFR7igv1fk9YDzFikbZRqTEy49pJqaK7RDA==",
+  "success": true,
+  "projectFilePath": "D:\\Coding\\codeWhateverYouWant\\DSA\\DSA_Web\\DSA_Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\97798\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
