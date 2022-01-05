@@ -2,7 +2,11 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model DSA_Web.Models.InputList
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form action="Home/PostData" method="POST">
+        <label>Enter data in comma separated form: </label>
+ @Html.TextBoxFor(m=>m.NumberList)
+ <input type="submit" value="Submit" />
+</form> 
 </div>
