@@ -19,7 +19,7 @@ Create MVC Project it will automatically provides you a Controller and a View
 ```csharp
 public class HomeController : Controller
 {
-
+//Main code
 }
 
 ```
